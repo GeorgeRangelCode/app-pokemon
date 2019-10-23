@@ -5,7 +5,7 @@ import Link from 'next/link';
 class index extends Component {
   static async getInitialProps() {
     let req = await fetch(
-      'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10'
+      'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964'
     );
     let { results: pokemons } = await req.json();
     return { pokemons };
