@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
+import Link from 'next/link';
 
 class index extends Component {
   static async getInitialProps() {
-    let req = await fetch('https://pokeapi.co/api/v2/pokemon');
+    let req = await fetch(
+      'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10'
+    );
     let { results: pokemons } = await req.json();
     return { pokemons };
   }
@@ -18,9 +21,11 @@ class index extends Component {
 
         <div className="pokemons">
           {pokemons.map((pokemon, index) => (
-            <a className="pokemon" key={index}>
-              <h2>{pokemon.name}</h2>
-            </a>
+            <Link href={`/pokemon?name=${pokemon.name}`} prefetch key={index}>
+              <a className="pokemon">
+                <h2>{pokemon.name}</h2>
+              </a>
+            </Link>
           ))}
         </div>
 
