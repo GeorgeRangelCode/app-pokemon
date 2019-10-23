@@ -1,0 +1,18 @@
+{
+  "name": "app-pokemon",
+  "version": "1.0.0",
+  "description": "App Pokemon",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "georgerangelcode",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.1.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}
